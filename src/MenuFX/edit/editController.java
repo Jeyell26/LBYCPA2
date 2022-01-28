@@ -31,8 +31,15 @@ public class editController implements Initializable {
 
     }
 
+    //    private void loadBST()
+//      // loads BST of the current profile for deletion
+
+//    private void saveBST()
+//      // Overwrite current profile BST
+
     private void setEdit(){
         //TODO: Check database if word exists. If yes, edit. If no, show error message
+        //      Save to database after editing
 
     }
 

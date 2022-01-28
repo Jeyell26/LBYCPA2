@@ -22,17 +22,28 @@ public class deleteController implements Initializable {
     Text error;
 
     @FXML
-    Button add, back;
+    Button delete, back;
     // Buttons to complete process
+
+    // BST bst = new BST();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
+        // LOAD BST
 
     }
 
-    private void setAdd(){
-        //TODO: Adds to database of current profile, If word already exists, show error message. Tip to go to edit instead
+//    private void loadBST()
+//      // loads BST of the current profile for deletion
+
+//    private void saveBST()
+//      // Overwrite current profile BST
+
+
+    private void setDelete(){
+        //TODO: delete from database of current profile, If word does not exists, show error message.
+        //      Save to database after deleting
 
     }
 
