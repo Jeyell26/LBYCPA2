@@ -1,4 +1,22 @@
-<?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="MenuFX.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFX.LoginController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="user" layoutX="154.0" layoutY="163.0" prefHeight="26.0" prefWidth="292.0" promptText="Username" />
+            <PasswordField fx:id="pass" layoutX="154.0" layoutY="200.0" prefHeight="26.0" prefWidth="292.0" promptText="Password" />
+            <Button fx:id="back" layoutX="306.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Main Menu" />
+            <Button fx:id="login" layoutX="154.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Login" />
+         </children></AnchorPane>
+   </children>
 </GridPane>
