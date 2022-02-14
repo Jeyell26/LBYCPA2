@@ -28,11 +28,12 @@ public class addController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-
+        System.out.println("hey");
     }
 
     private void setAdd(){
         //TODO: Adds to database of current profile, If word already exists, show error message. Tip to go to edit instead
+
 
     }
 

@@ -11,7 +11,7 @@ public class BSTree {
         root = null;
     }
 
-    public static class Node {
+    public class Node {
         public String title;
         public String definition;
         public Node parent;
