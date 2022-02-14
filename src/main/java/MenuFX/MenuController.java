@@ -1,5 +1,6 @@
 package MenuFX;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,11 @@ public class MenuController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons
         add.setOnAction(e -> switchScene(e,"add"));
+        delete.setOnAction(e -> switchScene(e,"delete"));
+        edit.setOnAction(e -> switchScene(e,"edit"));
+        search.setOnAction(e -> switchScene(e,"search"));
+        back.setOnAction(e -> switchScene(e,"main"));
+        exit.setOnAction(e -> Platform.exit());
     }
 
     public void switchScene(ActionEvent event, String filename){

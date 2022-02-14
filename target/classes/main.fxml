@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuFX.MainController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="login" layoutX="148.0" layoutY="161.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Login" />
+            <Button fx:id="signup" layoutX="321.0" layoutY="161.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Sign Up" />
+            <Button fx:id="exit" layoutX="236.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Exit" />
+         </children></AnchorPane>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
