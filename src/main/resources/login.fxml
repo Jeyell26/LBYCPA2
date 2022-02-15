@@ -6,21 +6,24 @@
 <?import javafx.scene.text.*?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFX.LoginController">
-    <columnConstraints>
-        <ColumnConstraints />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints />
-    </rowConstraints>
-    <children>
-        <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3eb489;">
-            <children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #3eb489;">
+         <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="344.0" layoutX="148.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="312.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="344.0" layoutX="144.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="312.0" />
-                <TextField fx:id="user" layoutX="182.0" layoutY="137.0" prefHeight="42.0" prefWidth="234.0" promptText="Username" />
-                <PasswordField fx:id="pass" layoutX="182.0" layoutY="194.0" prefHeight="42.0" prefWidth="234.0" promptText="Password" />
-                <Button fx:id="back" layoutX="230.0" layoutY="318.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Main Menu" />
-                <Button fx:id="login" layoutX="183.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" style="-fx-background-color: #3eb489;" text="LOGIN" textFill="WHITE">
+            <TextField fx:id="user" layoutX="182.0" layoutY="137.0" prefHeight="42.0" prefWidth="234.0" promptText="Username" />
+            <PasswordField fx:id="pass" layoutX="182.0" layoutY="194.0" prefHeight="42.0" prefWidth="234.0" promptText="Password" />
+            <Button fx:id="back" layoutX="183.0" layoutY="294.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #3eb489;" text="MAIN MENU" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell" size="14.0" />
+               </font></Button>
+            <Button fx:id="login" layoutX="183.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" style="-fx-background-color: #3eb489;" text="LOGIN" textFill="WHITE">
                <font>
                   <Font name="Rockwell" size="14.0" />
                </font></Button>
@@ -34,6 +37,6 @@
                   <Font name="Calibri" size="10.0" />
                </font>
             </Label>
-            </children></AnchorPane>
-    </children>
+         </children></AnchorPane>
+   </children>
 </GridPane>
