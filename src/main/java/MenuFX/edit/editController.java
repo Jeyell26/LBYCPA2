@@ -30,6 +30,7 @@ public class editController implements Initializable {
     Button edit, back;
     // Buttons to complete process
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here

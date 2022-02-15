@@ -12,9 +12,15 @@ public class Main extends Application {
     // Main runnable file
     // Should launch LoginController
 
+    Database.FirebaseService firebase = new Database.FirebaseService();
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        // initialization of the Firebase Database
+        firebase.initialize();
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/main.fxml")));
         primaryStage.setTitle("Main Menu");
         primaryStage.setScene(new Scene(root));

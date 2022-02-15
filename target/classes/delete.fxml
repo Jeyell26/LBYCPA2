@@ -1,4 +1,22 @@
-<?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="MenuFX.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuFX.delete.deleteController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="delete" layoutX="274.0" layoutY="216.0" mnemonicParsing="false" text="DELETE" />
+            <Button fx:id="back" layoutX="274.0" layoutY="262.0" mnemonicParsing="false" text="Back" />
+            <Label fx:id="error" layoutX="253.0" layoutY="74.0" text="Error message" visible="false" />
+            <TextField fx:id="word" layoutX="220.0" layoutY="175.0" promptText="Enter word to delete" />
+         </children></AnchorPane>
+   </children>
 </GridPane>

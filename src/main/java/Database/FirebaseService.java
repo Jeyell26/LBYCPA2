@@ -10,11 +10,12 @@ import java.io.IOException;
 
 public class FirebaseService {
     @PostConstruct
-    public void initialize() throws IOException {
+    public void initialize(){
         try {
             FileInputStream serviceAccount =
-                    new FileInputStream("test-ff249-firebase-adminsdk-u7033-44daf73f8c.json");
+                    new FileInputStream("lbycpa2-dictionary-database-firebase-adminsdk-jcyiu-5c618034b3.json");
 
+            // I have no idea why it is deprecated, but it still works so ignore :>
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .build();
