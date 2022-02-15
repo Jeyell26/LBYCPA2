@@ -3,6 +3,7 @@ package MenuFX.delete;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -19,7 +20,7 @@ public class deleteController implements Initializable {
     TextField word;
 
     @FXML
-    Text error;
+    Label error;
 
     @FXML
     Button delete, back;

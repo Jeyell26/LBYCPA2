@@ -3,6 +3,8 @@ package MenuFX.add;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -16,10 +18,13 @@ public class addController implements Initializable {
     // Should add to existing Database
 
     @FXML
-    TextField word, definition;
+    TextField word;
 
     @FXML
-    Text error;
+    TextArea definition;
+
+    @FXML
+    Label error;
 
     @FXML
     Button add, back;

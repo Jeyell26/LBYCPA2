@@ -1,4 +1,23 @@
-<?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="MenuFX.add.addController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuFX.add.addController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="add" layoutX="266.0" layoutY="226.0" mnemonicParsing="false" text="ADD" />
+            <Button fx:id="back" layoutX="266.0" layoutY="274.0" mnemonicParsing="false" text="Back" />
+            <TextArea fx:id="definition" layoutX="150.0" layoutY="129.0" prefHeight="78.0" prefWidth="283.0" promptText="Definition" />
+            <TextField fx:id="word" layoutX="210.0" layoutY="64.0" promptText="Word" />
+            <Label fx:id="error" layoutX="275.0" layoutY="312.0" text="Error Message" visible="false" />
+         </children></AnchorPane>
+   </children>
 </GridPane>
