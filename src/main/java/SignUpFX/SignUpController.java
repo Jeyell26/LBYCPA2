@@ -33,7 +33,7 @@ public class SignUpController implements Initializable {
 
     private void setBack(ActionEvent e){
         //TODO: Go back to MainMenuFX
-        x.switchScene(e,"main","Main Menu",user.getText());
+        x.switchScene(e,"main","Main Menu");
     }
 
     private void setSignUp(ActionEvent e, String user, String pass){

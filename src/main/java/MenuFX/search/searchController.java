@@ -1,4 +1,4 @@
-package MenuFX.edit;
+package MenuFX.search;
 
 import Tools.Navigate;
 import javafx.event.ActionEvent;
@@ -8,22 +8,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class editController implements Initializable {
+public class searchController implements Initializable {
     // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
-    // TextField to input word and definition
-    // Should add to existing Database
+    // TextField to input word to search
+    // Should show all results from each database
+    // Use a scroll wheel to be able to view all inputs
+    // IF possible, add a Like button and sort it by likes (descending)
 
-    @FXML
-    TextField word;
+    // Show the current user's definition if they have the word on their database
+    // If not show "This word has not been defined by the user yet"
 
-    @FXML
-    TextArea definition;
+    // If the word is not mentioned in the database INPUT word has not been added by anyone yet.
+
+    // This is by far the hardest one to implement.
 
     @FXML
     Label error;
@@ -39,12 +41,6 @@ public class editController implements Initializable {
         back.setOnAction(e -> setBack(e));
     }
 
-    //    private void loadBST()
-//      // loads BST of the current profile for deletion
-
-//    private void saveBST()
-//      // Overwrite current profile BST
-
     private void setEdit(){
         //TODO: Check database if word exists. If yes, edit. If no, show error message
         //      Save to database after editing
@@ -55,5 +51,4 @@ public class editController implements Initializable {
         //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
-
 }

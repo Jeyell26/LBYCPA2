@@ -1,6 +1,7 @@
 package MenuFX.add;
 
 import LoginFX.LoginController;
+import Tools.Navigate;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -34,6 +35,7 @@ public class addController implements Initializable {
 
     Stage stage;
 
+    Navigate x = new Navigate();
     // Make sure you use the proper FXML IDs!
 
     // TextField to input word and definition
@@ -55,25 +57,26 @@ public class addController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-
+        error.setText("");
+        error.setWrapText(true);
         add.setOnAction(e -> {
             try {
                 if (verifyWord(word.getText())){
                     //TODO: GUI that shows "word already exists" and tip to go to edit instead
                     error.setText("Word already exists, go to edit instead");
                     error.setStyle("-fx-text-fill: red");
-                    System.out.println("word already exists, go to edit instead");
                     return;
 
                 }
-                error.setText("");
+                error.setText("Word added");
+                error.setStyle("-fx-text-fill: green");
                 setAdd(e,word.getText(),definition.getText());
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
         });
 
-        back.setOnAction(e -> setBack());
+        back.setOnAction(e -> setBack(e));
     }
 
     private void setAdd(ActionEvent event, String word, String def) throws ExecutionException, InterruptedException {
@@ -99,11 +102,10 @@ public class addController implements Initializable {
         return true;
     }
 
-    private void setBack(){
-
-
+    private void setBack(ActionEvent e){
+        //TODO: Go back to MainMenuFX
+        x.switchScene(e,"menu","Menu");
     }
-
 
 
 }

@@ -1,5 +1,7 @@
 package MenuFX.delete;
 
+import Tools.Navigate;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,7 +14,7 @@ import java.util.ResourceBundle;
 
 public class deleteController implements Initializable {
     // Make sure you use the proper FXML IDs!
-
+    Navigate x = new Navigate();
     // TextField to input word and definition
     // Should add to existing Database
 
@@ -31,6 +33,7 @@ public class deleteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
+        back.setOnAction(e -> setBack(e));
         // LOAD BST
 
     }
@@ -48,9 +51,9 @@ public class deleteController implements Initializable {
 
     }
 
-    private void setBack(){
-        //TODO: Go back to main menu fx
-
+    private void setBack(ActionEvent e){
+        //TODO: Go back to MainMenuFX
+        x.switchScene(e,"menu","Menu");
     }
 
 
