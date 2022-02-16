@@ -20,7 +20,6 @@ public class Navigate {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+filename+".fxml")));
             currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            System.out.println(currStage.getUserData());
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setUserData(currStage.getUserData());
             stage.setScene(new Scene(root));
@@ -36,7 +35,6 @@ public class Navigate {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+filename+".fxml")));
             currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            System.out.println(currStage.getUserData());
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setUserData(currStage.getUserData());
             stage.setScene(new Scene(root));
@@ -46,4 +44,22 @@ public class Navigate {
             e.printStackTrace();
         }
     }
+
+    // Switch scene with userData
+    public void switchScene(ActionEvent event, String filename, String title, String data){
+        Stage stage, currStage;
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+filename+".fxml")));
+            currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setUserData(currStage.getUserData());
+            stage.setScene(new Scene(root));
+            stage.setTitle(title);
+            stage.setUserData(data);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

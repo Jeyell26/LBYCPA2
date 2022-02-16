@@ -6,6 +6,7 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.cloud.FirestoreClient;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,8 +14,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -36,47 +39,40 @@ public class LoginController implements Initializable {
     PasswordField pass;
 
     @FXML
+    Label error;
+
+    @FXML
     Button login, back;
     // Buttons to navigate
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        error.setWrapText(true);
         //TODO: Initialize buttons here
-
         login.setOnAction(e -> {
             try {
                 if (loginUser(user.getText(),pass.getText())){
-                    setLogin(user.getText());
+                    setLogin(e,user.getText());
                 }
-            } catch (ExecutionException | InterruptedException | IOException ex) {
+            } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
         });
 
-        back.setOnAction(e -> setBack());
+        back.setOnAction(e -> setBack(e));
 
         //TODO: Load from database here (to check if login is valid)
 
     }
 
-    private void setBack(){
+    private void setBack(ActionEvent e){
         //TODO: Go back to MainMenuFX
-
-        Stage stage = (Stage) back.getScene().getWindow();
-        stage.close();
-
+        x.switchScene(e,"main","Main Menu",user.getText());
     }
 
-    private void setLogin(String input) throws IOException {
+    private void setLogin(ActionEvent e, String input) {
         //TODO: If user and pass is valid, proceed to MenuFX. If not, Show error message.
-
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/menu.fxml")));
-        stage.setUserData(input);
-        stage.setTitle("Menu");
-        stage.setScene(new Scene(root));
-        stage.show();
-
+        x.switchScene(e,"menu","Menu",input);
     }
 
     // verifies if user exists in the database
@@ -90,20 +86,33 @@ public class LoginController implements Initializable {
 
     // whether inputted user details matches
     private Boolean loginUser(String user, String pass) throws ExecutionException, InterruptedException {
+        if(user.equals("")||pass.equals("")){
+            error.setText("Please input username/password");
+            error.setStyle("-fx-text-fill: red");
+            return false;
+        }
         Firestore db = FirestoreClient.getFirestore();
         DocumentReference docRef = db.collection("User Details").document(user);
         ApiFuture<DocumentSnapshot> future = docRef.get();
         DocumentSnapshot document = future.get();
+        this.user.clear();
+        this.pass.clear();
         if (document.exists()) {
             if(pass.equals(document.getString("password"))) {
+                error.setText("Logging in..");
+                error.setStyle("-fx-text-fill: green");
                 return true;
             }
             else {
                 System.out.println("Wrong Password");
+                error.setText("Wrong Password");
+                error.setStyle("-fx-text-fill: red");
                 return false;
             }
         } else {
             System.out.println("User does not exist");
+            error.setText("Username does not exit in our database");
+            error.setStyle("-fx-text-fill: red");
             return false;
         }
     }

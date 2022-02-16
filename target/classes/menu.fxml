@@ -11,7 +11,7 @@
          <children>
             <AnchorPane layoutX="65.0" layoutY="105.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="add" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Add">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
@@ -19,7 +19,7 @@
                </children></AnchorPane>
             <AnchorPane layoutX="340.0" layoutY="105.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="edit" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Edit">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
@@ -27,7 +27,7 @@
                </children></AnchorPane>
             <AnchorPane layoutX="65.0" layoutY="202.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="search" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Search">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
@@ -36,7 +36,7 @@
             </AnchorPane>
             <AnchorPane layoutX="340.0" layoutY="200.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="delete" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Delete">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
@@ -45,7 +45,7 @@
             </AnchorPane>
             <AnchorPane layoutX="65.0" layoutY="299.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="back" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Back">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
@@ -54,7 +54,7 @@
             </AnchorPane>
             <AnchorPane layoutX="340.0" layoutY="297.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" stroke="#f4f4f9" strokeType="INSIDE" width="192.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
                   <Button fx:id="exit" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="EXIT">
                      <font>
                         <Font name="Roboto Light" size="14.0" />

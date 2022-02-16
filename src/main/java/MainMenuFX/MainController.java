@@ -29,7 +29,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-        login.setOnAction(e -> x.switchScene(e,"login"));
+        login.setOnAction(e -> x.switchScene(e,"login","Login"));
     }
 
 
