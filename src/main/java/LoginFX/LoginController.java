@@ -67,7 +67,7 @@ public class LoginController implements Initializable {
 
     private void setBack(ActionEvent e){
         //TODO: Go back to MainMenuFX
-        x.switchScene(e,"main","Main Menu",user.getText());
+        x.switchScene(e,"main","Main Menu");
     }
 
     private void setLogin(ActionEvent e, String input) {

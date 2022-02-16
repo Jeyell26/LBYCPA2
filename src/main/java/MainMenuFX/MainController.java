@@ -1,9 +1,11 @@
 package MainMenuFX;
 
 import Tools.Navigate;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,26 +32,13 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
         login.setOnAction(e -> x.switchScene(e,"login","Login"));
+        signup.setOnAction(e -> x.switchScene(e,"signup","Sign Up"));
+        exit.setOnAction(e -> setExit(e));
     }
 
-
-
-    private void setSignup(){
-        //TODO: Transfer to SignUp menu if clicked
-    }
-
-    private void setLogin() throws IOException {
-        //TODO: Transfer to Login menu if clicked
-
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/login.fxml")));
-        stage.setTitle("Main Menu");
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
-    private void setExit(){
+    private void setExit(ActionEvent e){
         //TODO: Exit the code if clicked
+        ((Stage) ((Node)e.getSource()).getScene().getWindow()).close();
     }
 
 }
