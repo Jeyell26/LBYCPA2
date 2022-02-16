@@ -2,14 +2,27 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainMenuFX.MainController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f9;">
          <children>
-            <Button fx:id="login" layoutX="148.0" layoutY="161.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Login" />
-            <Button fx:id="signup" layoutX="321.0" layoutY="161.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Sign Up" />
-            <Button fx:id="exit" layoutX="236.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" text="Exit" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="362.0" layoutX="13.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="576.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="362.0" layoutX="9.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="576.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="48.0" layoutX="137.0" layoutY="170.0" stroke="#f4f4f9" strokeType="INSIDE" width="328.0" />
+            <Button fx:id="login" layoutX="143.0" layoutY="174.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="315.0" style="-fx-background-color: #3eb489;" text="Login" textFill="#f4f4f9" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="48.0" layoutX="138.0" layoutY="227.0" stroke="#f4f4f9" strokeType="INSIDE" width="328.0" />
+            <Button fx:id="signup" layoutX="143.0" layoutY="231.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="315.0" style="-fx-background-color: #3eb489;" text="Sign Up" textFill="#f4f4f9" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="48.0" layoutX="138.0" layoutY="283.0" stroke="#f4f4f9" strokeType="INSIDE" width="328.0" />
+            <Button fx:id="exit" layoutX="143.0" layoutY="287.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="315.0" style="-fx-background-color: #3eb489;" text="Exit" textFill="#f4f4f9" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="84.0" layoutX="113.0" layoutY="54.0" stroke="#3da35d" strokeType="INSIDE" width="368.0" />
+            <Text fill="#3eb489" fontSmoothingType="LCD" layoutX="151.0" layoutY="90.0" stroke="#3eb489" strokeLineCap="ROUND" strokeLineJoin="BEVEL" text="Binary Tree&#10;Dictionary" textAlignment="CENTER" wrappingWidth="298.4609375">
+               <font>
+                  <Font name="Roboto Light" size="23.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
    </children>
    <columnConstraints>

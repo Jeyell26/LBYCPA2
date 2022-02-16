@@ -24,7 +24,7 @@ public class editController implements Initializable {
     TextArea definition;
 
     @FXML
-    Label errorMessage;
+    Label error;
 
     @FXML
     Button edit, back;
