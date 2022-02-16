@@ -61,15 +61,25 @@ public class addController implements Initializable {
         error.setWrapText(true);
         add.setOnAction(e -> {
             try {
-                if (verifyWord(word.getText())){
+                if(word.getText().isEmpty()){
+                    error.setText("Please input word");
+                    error.setStyle("-fx-text-fill: red");
+                    return;
+                }
+                else if(definition.getText().isEmpty()){
+                    error.setText("Please input definition");
+                    error.setStyle("-fx-text-fill: red");
+                    return;
+                }
+                if (!verifyWord(e, word.getText())){
                     //TODO: GUI that shows "word already exists" and tip to go to edit instead
                     error.setText("Word already exists, go to edit instead");
                     error.setStyle("-fx-text-fill: red");
                     return;
-
                 }
                 error.setText("Word added");
                 error.setStyle("-fx-text-fill: green");
+                System.out.println(definition.getText());
                 setAdd(e,word.getText(),definition.getText());
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
@@ -77,6 +87,7 @@ public class addController implements Initializable {
         });
 
         back.setOnAction(e -> setBack(e));
+
     }
 
     private void setAdd(ActionEvent event, String word, String def) throws ExecutionException, InterruptedException {
@@ -87,14 +98,15 @@ public class addController implements Initializable {
         db.collection("User Database").document((String) stage.getUserData()).set(dictionary, SetOptions.merge());
     }
 
-    private Boolean verifyWord(String word) throws ExecutionException, InterruptedException{
+    private Boolean verifyWord(ActionEvent event, String word) throws ExecutionException, InterruptedException{
         Firestore db = FirestoreClient.getFirestore();
-        DocumentReference docRef = db.collection("User Database").document("user");
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        DocumentReference docRef = db.collection("User Database").document((String) stage.getUserData());
         ApiFuture<DocumentSnapshot> future = docRef.get();
         DocumentSnapshot document = future.get();
         if (document.exists()){
             for(String key: Objects.requireNonNull(document.getData()).keySet()){
-                if (key.equalsIgnoreCase(word)){
+                if (key.equals(word)){
                     return false;
                 }
             }

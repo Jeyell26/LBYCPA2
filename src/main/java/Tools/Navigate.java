@@ -47,12 +47,11 @@ public class Navigate {
 
     // Switch scene with userData
     public void switchScene(ActionEvent event, String filename, String title, String data){
-        Stage stage, currStage;
+        Stage stage;
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+filename+".fxml")));
-            currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.setUserData(currStage.getUserData());
+            stage.setUserData(data);
             stage.setScene(new Scene(root));
             stage.setTitle(title);
             stage.setUserData(data);

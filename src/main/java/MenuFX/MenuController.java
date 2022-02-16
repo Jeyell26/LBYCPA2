@@ -29,7 +29,7 @@ public class MenuController implements Initializable {
         add.setOnAction(e -> x.switchScene(e,"add"));
         delete.setOnAction(e -> x.switchScene(e,"delete"));
         edit.setOnAction(e -> x.switchScene(e,"edit"));
-        search.setOnAction(e -> x.switchScene(e, "MenuFX/search"));
+        search.setOnAction(e -> x.switchScene(e, "search"));
         back.setOnAction(e -> x.switchScene(e,"main"));
         exit.setOnAction(e -> Platform.exit());
     }

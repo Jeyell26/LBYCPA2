@@ -54,6 +54,8 @@ public class LoginController implements Initializable {
                 if (loginUser(user.getText(),pass.getText())){
                     setLogin(e,user.getText());
                 }
+                this.user.clear();
+                this.pass.clear();
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
@@ -75,15 +77,6 @@ public class LoginController implements Initializable {
         x.switchScene(e,"menu","Menu",input);
     }
 
-    // verifies if user exists in the database
-    private Boolean verifyUser(String user) throws ExecutionException, InterruptedException {
-        Firestore db = FirestoreClient.getFirestore();
-        DocumentReference docRef = db.collection("User Details").document(user);
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        DocumentSnapshot document = future.get();
-        return !document.exists();
-    }
-
     // whether inputted user details matches
     private Boolean loginUser(String user, String pass) throws ExecutionException, InterruptedException {
         if(user.equals("")||pass.equals("")){
@@ -95,8 +88,6 @@ public class LoginController implements Initializable {
         DocumentReference docRef = db.collection("User Details").document(user);
         ApiFuture<DocumentSnapshot> future = docRef.get();
         DocumentSnapshot document = future.get();
-        this.user.clear();
-        this.pass.clear();
         if (document.exists()) {
             if(pass.equals(document.getString("password"))) {
                 error.setText("Logging in..");
@@ -111,7 +102,7 @@ public class LoginController implements Initializable {
             }
         } else {
             System.out.println("User does not exist");
-            error.setText("Username does not exit in our database");
+            error.setText("Username does not exist in our database");
             error.setStyle("-fx-text-fill: red");
             return false;
         }
