@@ -1,5 +1,6 @@
 package MainMenuFX;
 
+import Tools.Navigate;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,18 +23,16 @@ public class MainController implements Initializable {
     Button login, signup, exit;
     // Buttons to navigate
 
+    // for convenience
+    private Navigate x = new Navigate();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-
-        login.setOnAction(e ->{
-            try {
-                setLogin();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
+        login.setOnAction(e -> x.switchScene(e,"login"));
     }
+
+
 
     private void setSignup(){
         //TODO: Transfer to SignUp menu if clicked

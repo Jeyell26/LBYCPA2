@@ -60,11 +60,13 @@ public class addController implements Initializable {
             try {
                 if (verifyWord(word.getText())){
                     //TODO: GUI that shows "word already exists" and tip to go to edit instead
-
+                    error.setText("Word already exists, go to edit instead");
+                    error.setStyle("-fx-text-fill: red");
                     System.out.println("word already exists, go to edit instead");
                     return;
 
                 }
+                error.setText("");
                 setAdd(e,word.getText(),definition.getText());
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();

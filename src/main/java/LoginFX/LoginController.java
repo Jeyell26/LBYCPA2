@@ -1,5 +1,6 @@
 package LoginFX;
 
+import Tools.Navigate;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -25,6 +26,7 @@ import java.util.concurrent.ExecutionException;
 public class LoginController implements Initializable {
 
     // Make sure you use the proper FXML IDs!
+    Navigate x = new Navigate();
 
     // Username and Password textFields
     @FXML

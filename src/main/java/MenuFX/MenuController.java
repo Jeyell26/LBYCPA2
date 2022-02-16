@@ -1,5 +1,6 @@
 package MenuFX;
 
+import Tools.Navigate;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,9 +22,7 @@ public class MenuController implements Initializable {
     // Main menu after logging in
     // Includes Adding a word, Deleting a word, Editing a word, Searching a word, and Exit.
     // Remember that each button click is a new window, therefore a new controller.
-    private Stage stage, currStage;
-    private Scene scene;
-    private Parent root;
+    Navigate x = new Navigate();
 
     @FXML
     Button add, delete, edit, search, back, exit;
@@ -35,27 +34,12 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons
-        add.setOnAction(e -> switchScene(e,"add"));
-        delete.setOnAction(e -> switchScene(e,"delete"));
-        edit.setOnAction(e -> switchScene(e,"edit"));
-        search.setOnAction(e -> switchScene(e,"search"));
-        back.setOnAction(e -> switchScene(e,"main"));
+        add.setOnAction(e -> x.switchScene(e,"add"));
+        delete.setOnAction(e -> x.switchScene(e,"delete"));
+        edit.setOnAction(e -> x.switchScene(e,"edit"));
+        search.setOnAction(e -> x.switchScene(e,"search"));
+        back.setOnAction(e -> x.switchScene(e,"main"));
         exit.setOnAction(e -> Platform.exit());
-    }
-
-    public void switchScene(ActionEvent event, String filename){
-        try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/"+filename+".fxml")));
-            currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            System.out.println(currStage.getUserData());
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.setUserData(currStage.getUserData());
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
     // just to pass the name of current user to other controllers
