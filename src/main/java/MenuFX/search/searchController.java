@@ -38,7 +38,7 @@ public class searchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-        back.setOnAction(e -> setBack(e));
+//        back.setOnAction(e -> setBack(e));
     }
 
     private void setEdit(){
