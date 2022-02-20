@@ -16,7 +16,7 @@
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="135.0" layoutX="35.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0" />
-            <TextArea fx:id="definition" layoutX="31.0" layoutY="81.0" prefHeight="135.0" prefWidth="285.0" promptText="Definition" />
+            <TextArea fx:id="definition" layoutX="31.0" layoutY="81.0" prefHeight="135.0" prefWidth="285.0" promptText="Definition" wrapText="true" />
             <TextField fx:id="word" layoutX="73.0" layoutY="270.0" prefHeight="36.0" prefWidth="250.0" promptText="Word" />
             <Rectangle fill="#3eb489" height="36.0" layoutX="35.0" layoutY="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="41.0" />
             <Button fx:id="add" layoutX="38.0" layoutY="273.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">

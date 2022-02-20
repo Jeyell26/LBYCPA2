@@ -30,7 +30,7 @@
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="36.0" layoutX="18.0" layoutY="269.0" stroke="#f4f4f9" strokeType="INSIDE" width="215.0" />
                         <Button fx:id="back" layoutX="23.0" layoutY="274.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="206.0" style="-fx-background-color: #3eb489;" text="Back" textFill="#f4f4f9" />
-                        <Text fill="#f4f4f9" fontSmoothingType="LCD" layoutX="33.0" layoutY="57.0" stroke="#f4f4f9" strokeLineCap="BUTT" strokeLineJoin="BEVEL" text="USER DEFINITION">
+                        <Text fx:id="wordChosen" fill="#f4f4f9" fontSmoothingType="LCD" layoutX="33.0" layoutY="57.0" stroke="#f4f4f9" strokeLineCap="BUTT" strokeLineJoin="BEVEL" text="USER DEFINITION">
                             <font>
                                 <Font name="Roboto Light" size="24.0" />
                             </font>
@@ -45,7 +45,7 @@
                <content>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="307.0" prefWidth="265.0">
                      <children>
-                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Other Definitions will be displayed here">
+                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Other Definitions will be displayed here" wrapText="true">
                            <font>
                               <Font name="Roboto Thin" size="11.0" />
                            </font>

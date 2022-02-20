@@ -16,9 +16,9 @@
         <AnchorPane prefHeight="400.0" prefWidth="600.0">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="135.0" layoutX="283.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0" />
-                <TextField fx:id="word" layoutX="321.0" layoutY="269.0" prefHeight="36.0" prefWidth="250.0" promptText="Search Word" />
-                <Rectangle fill="#3eb489" height="36.0" layoutX="283.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="41.0" />
-                <Button fx:id="moveToSearch" layoutX="286.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">
+                <TextField fx:id="word" layoutX="321.0" layoutY="299.0" prefHeight="36.0" prefWidth="250.0" promptText="Search Word" />
+                <Rectangle fill="#3eb489" height="36.0" layoutX="283.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="41.0" />
+                <Button fx:id="moveToSearch" layoutX="286.0" layoutY="302.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">
                     <font>
                         <Font name="Roboto Light" size="13.0" />
                     </font></Button>
@@ -43,7 +43,7 @@
                     </children></AnchorPane>
             <ScrollPane layoutX="279.0" layoutY="81.0" prefHeight="135.0" prefWidth="285.0">
                <content>
-                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="307.0" prefWidth="265.0">
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="307.0" prefWidth="266.0">
                      <children>
                         <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Pick a database" wrapText="true">
                            <font>
@@ -68,6 +68,12 @@
                   <Font name="Roboto Light" size="11.0" />
                </font>
             </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="36.0" layoutX="360.0" layoutY="225.0" stroke="#f4f4f9" strokeType="INSIDE" width="119.0" />
+            <Button alignment="CENTER" layoutX="365.0" layoutY="230.0" mnemonicParsing="false" style="-fx-background-color: #3eb489;" text="Change Database" textAlignment="CENTER" textFill="#f4f4f9">
+               <font>
+                  <Font name="Roboto Light" size="12.0" />
+               </font>
+            </Button>
             </children></AnchorPane>
     </children>
 </GridPane>

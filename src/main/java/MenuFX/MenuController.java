@@ -17,7 +17,7 @@ public class MenuController implements Initializable {
     Navigate x = new Navigate();
 
     @FXML
-    Button add, delete, edit, search, back, exit;
+    Button add, delete, edit, search, back, display;
 
     // can be showed to show the name of current user
     // currently used as indicator of who is the current user logged in.
@@ -31,7 +31,7 @@ public class MenuController implements Initializable {
         edit.setOnAction(e -> x.switchScene(e,"edit","Edit an existing word"));
         search.setOnAction(e -> x.switchScene(e, "search","Search for a definition"));
         back.setOnAction(e -> x.switchScene(e,"main","Main menu"));
-        exit.setOnAction(e -> Platform.exit());
+        display.setOnAction(e -> x.switchScene(e, "display", "Display Words"));
     }
 
     // just to pass the name of current user to other controllers

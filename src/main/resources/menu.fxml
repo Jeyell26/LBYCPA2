@@ -46,7 +46,7 @@
             <AnchorPane layoutX="65.0" layoutY="299.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
-                  <Button fx:id="back" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Back">
+                  <Button fx:id="back" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Log Out">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
                      </font></Button>
@@ -55,7 +55,7 @@
             <AnchorPane layoutX="340.0" layoutY="297.0" prefHeight="86.0" prefWidth="194.0" style="-fx-background-color: #3da35d;">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="83.0" stroke="#f4f4f9" strokeType="INSIDE" width="191.0" />
-                  <Button fx:id="exit" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="EXIT">
+                  <Button fx:id="display" layoutX="8.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="178.0" style="-fx-background-color: #f4f4f9;" text="Display">
                      <font>
                         <Font name="Roboto Light" size="14.0" />
                      </font></Button>
