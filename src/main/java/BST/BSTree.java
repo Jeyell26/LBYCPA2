@@ -6,8 +6,10 @@ public class BSTree {
     public Node root;
     public boolean flag;
     public int height;
+    public String owner;
 
-    public BSTree(){
+    public BSTree(String input){
+        owner = input;
         root = null;
     }
 
