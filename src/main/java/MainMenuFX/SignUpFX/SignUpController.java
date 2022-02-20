@@ -1,4 +1,4 @@
-package SignUpFX;
+package MainMenuFX.SignUpFX;
 
 import Tools.Navigate;
 import com.google.api.core.ApiFuture;

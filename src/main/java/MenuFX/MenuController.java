@@ -26,11 +26,11 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons
-        add.setOnAction(e -> x.switchScene(e,"add"));
-        delete.setOnAction(e -> x.switchScene(e,"delete"));
-        edit.setOnAction(e -> x.switchScene(e,"edit"));
-        search.setOnAction(e -> x.switchScene(e, "search"));
-        back.setOnAction(e -> x.switchScene(e,"main"));
+        add.setOnAction(e -> x.switchScene(e,"add","Add a word"));
+        delete.setOnAction(e -> x.switchScene(e,"delete","Delete an existing word"));
+        edit.setOnAction(e -> x.switchScene(e,"edit","Edit an existing word"));
+        search.setOnAction(e -> x.switchScene(e, "search","Search for a definition"));
+        back.setOnAction(e -> x.switchScene(e,"main","Main menu"));
         exit.setOnAction(e -> Platform.exit());
     }
 
