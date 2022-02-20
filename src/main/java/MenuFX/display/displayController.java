@@ -4,9 +4,7 @@ import Tools.Navigate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,10 +18,16 @@ public class displayController implements Initializable {
     // Should show all words from this databse
 
     @FXML
+    ToggleGroup databaseWordsTG;
+
+    @FXML
+    RadioButton userWords, databaseWords;
+
+    @FXML
     Label error, userDefinition, otherDefinitions;
 
     @FXML
-    Button search, back, like;
+    Button moveToSearch, back, like;
     // Buttons to complete process
 
 

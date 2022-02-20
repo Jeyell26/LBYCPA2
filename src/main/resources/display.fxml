@@ -16,26 +16,26 @@
         <AnchorPane prefHeight="400.0" prefWidth="600.0">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="135.0" layoutX="283.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0" />
-                <TextField fx:id="word" layoutX="321.0" layoutY="269.0" prefHeight="36.0" prefWidth="250.0" promptText="Word" />
+                <TextField fx:id="word" layoutX="321.0" layoutY="269.0" prefHeight="36.0" prefWidth="250.0" promptText="Search Word" />
                 <Rectangle fill="#3eb489" height="36.0" layoutX="283.0" layoutY="269.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="41.0" />
-                <Button fx:id="search" layoutX="286.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">
+                <Button fx:id="moveToSearch" layoutX="286.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">
                     <font>
                         <Font name="Roboto Light" size="13.0" />
                     </font></Button>
-                <Label fx:id="error" alignment="CENTER" layoutX="332.0" layoutY="44.0" prefHeight="26.0" prefWidth="186.0" text="Other Definitions" textAlignment="CENTER">
+                <Label fx:id="error" alignment="CENTER" layoutX="307.0" layoutY="31.0" prefHeight="26.0" prefWidth="99.0" text="User Words" textAlignment="CENTER">
                <font>
-                  <Font name="Roboto Light" size="18.0" />
+                  <Font name="Roboto Light" size="11.0" />
                </font></Label>
                 <AnchorPane prefHeight="400.0" prefWidth="250.0" style="-fx-background-color: #3eb489;">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3eb489" height="36.0" layoutX="18.0" layoutY="269.0" stroke="#f4f4f9" strokeType="INSIDE" width="215.0" />
                         <Button fx:id="back" layoutX="23.0" layoutY="274.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="206.0" style="-fx-background-color: #3eb489;" text="Back" textFill="#f4f4f9" />
-                        <Text fill="#f4f4f9" fontSmoothingType="LCD" layoutX="33.0" layoutY="57.0" stroke="#f4f4f9" strokeLineCap="BUTT" strokeLineJoin="BEVEL" text="USER DEFINITION">
+                        <Text fill="#f4f4f9" fontSmoothingType="LCD" layoutX="50.0" layoutY="66.0" stroke="#f4f4f9" strokeLineCap="BUTT" strokeLineJoin="BEVEL" text="Display Words">
                             <font>
                                 <Font name="Roboto Light" size="24.0" />
                             </font>
                         </Text>
-                  <Label fx:id="userDefinition" alignment="TOP_CENTER" layoutX="33.0" layoutY="73.0" prefHeight="135.0" prefWidth="194.0" text="Add a word then press the plus icon to seach for the word" textAlignment="CENTER" textFill="#f4f4f9" wrapText="true">
+                  <Label alignment="TOP_CENTER" layoutX="29.0" layoutY="125.0" prefHeight="36.0" prefWidth="194.0" text="Here, you can view all of the stored words in our database" textAlignment="CENTER" textFill="#f4f4f9" wrapText="true">
                      <font>
                         <Font name="Roboto Light" size="10.0" />
                      </font>
@@ -45,7 +45,7 @@
                <content>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="307.0" prefWidth="265.0">
                      <children>
-                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Other Definitions will be displayed here">
+                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Pick a database">
                            <font>
                               <Font name="Roboto Thin" size="11.0" />
                            </font>
@@ -54,6 +54,20 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
+            <RadioButton fx:id="userWords" layoutX="349.0" layoutY="57.0" mnemonicParsing="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="databaseWords" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="databaseWords" contentDisplay="BOTTOM" layoutX="477.0" layoutY="57.0" mnemonicParsing="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="databaseWordsTG" />
+               </toggleGroup></RadioButton>
+            <Label fx:id="error1" alignment="CENTER" layoutX="440.0" layoutY="31.0" prefHeight="26.0" prefWidth="90.0" text="Database Words" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Light" size="11.0" />
+               </font>
+            </Label>
             </children></AnchorPane>
     </children>
 </GridPane>

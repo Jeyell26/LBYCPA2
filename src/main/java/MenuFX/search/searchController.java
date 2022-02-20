@@ -31,6 +31,9 @@ public class searchController implements Initializable {
     // This is by far the hardest one to implement.
 
     @FXML
+    Text wordChosen;
+
+    @FXML
     Label error, userDefinition, otherDefinitions;
 
     @FXML
