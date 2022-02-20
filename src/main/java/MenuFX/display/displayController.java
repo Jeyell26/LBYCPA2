@@ -24,10 +24,10 @@ public class displayController implements Initializable {
     RadioButton userWords, databaseWords;
 
     @FXML
-    Label error, userDefinition, otherDefinitions;
+    Label error, otherDefinitions;
 
     @FXML
-    Button moveToSearch, back, like;
+    Button moveToSearch, back, changeDatabase;
     // Buttons to complete process
 
 
