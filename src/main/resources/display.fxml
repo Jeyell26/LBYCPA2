@@ -16,9 +16,8 @@
         <AnchorPane prefHeight="400.0" prefWidth="600.0">
             <children>
                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3da35d" height="135.0" layoutX="283.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="285.0" />
-                <TextField fx:id="word" layoutX="321.0" layoutY="299.0" prefHeight="36.0" prefWidth="250.0" promptText="Search Word" />
-                <Rectangle fill="#3eb489" height="36.0" layoutX="283.0" layoutY="299.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="41.0" />
-                <Button fx:id="moveToSearch" layoutX="286.0" layoutY="302.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: #3eb489;" text="+" textFill="#f4f4f9">
+                <Rectangle fill="#3eb489" height="36.0" layoutX="495.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="88.0" />
+                <Button fx:id="moveToSearch" layoutX="500.0" layoutY="350.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #3eb489;" text="Search" textFill="#f4f4f9">
                     <font>
                         <Font name="Roboto Light" size="13.0" />
                     </font></Button>
@@ -59,7 +58,7 @@
                   <ToggleGroup fx:id="databaseWordsTG" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="databaseWords" contentDisplay="BOTTOM" layoutX="477.0" layoutY="57.0" mnemonicParsing="false" toggleGroup="$databaseWordsTG" />
+            <RadioButton fx:id="databaseWords" contentDisplay="BOTTOM" layoutX="477.0" layoutY="57.0" mnemonicParsing="false" />
             <Label fx:id="error1" alignment="CENTER" layoutX="440.0" layoutY="31.0" prefHeight="26.0" prefWidth="90.0" text="Database Words" textAlignment="CENTER">
                <font>
                   <Font name="Roboto Light" size="11.0" />

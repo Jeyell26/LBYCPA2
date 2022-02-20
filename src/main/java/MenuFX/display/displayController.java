@@ -13,8 +13,6 @@ public class displayController implements Initializable {
     // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
     // TextField to input word to search
-    @FXML
-    TextField word;
     // Should show all words from this databse
 
     @FXML
