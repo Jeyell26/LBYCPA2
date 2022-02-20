@@ -56,13 +56,10 @@
             </ScrollPane>
             <RadioButton fx:id="userWords" layoutX="349.0" layoutY="57.0" mnemonicParsing="false">
                <toggleGroup>
-                  <ToggleGroup fx:id="databaseWords" />
+                  <ToggleGroup fx:id="databaseWordsTG" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="databaseWords" contentDisplay="BOTTOM" layoutX="477.0" layoutY="57.0" mnemonicParsing="false">
-               <toggleGroup>
-                  <ToggleGroup fx:id="databaseWordsTG" />
-               </toggleGroup></RadioButton>
+            <RadioButton fx:id="databaseWords" contentDisplay="BOTTOM" layoutX="477.0" layoutY="57.0" mnemonicParsing="false" toggleGroup="$databaseWordsTG" />
             <Label fx:id="error1" alignment="CENTER" layoutX="440.0" layoutY="31.0" prefHeight="26.0" prefWidth="90.0" text="Database Words" textAlignment="CENTER">
                <font>
                   <Font name="Roboto Light" size="11.0" />
