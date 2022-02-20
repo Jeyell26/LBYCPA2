@@ -35,9 +35,9 @@
                                 <Font name="Roboto Light" size="24.0" />
                             </font>
                         </Text>
-                  <Label fx:id="userDefinition" alignment="TOP_CENTER" layoutX="33.0" layoutY="73.0" prefHeight="135.0" prefWidth="194.0" text="Add a word then press the plus icon to seach for the word" textAlignment="CENTER" textFill="#f4f4f9" wrapText="true">
+                  <Label fx:id="userDefinition" alignment="TOP_CENTER" layoutX="33.0" layoutY="73.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="135.0" prefWidth="194.0" text="Add a word then press the plus icon to seach for the word" textAlignment="CENTER" textFill="#f4f4f9" wrapText="true">
                      <font>
-                        <Font name="Roboto Light" size="10.0" />
+                        <Font name="Roboto Light" size="14.0" />
                      </font>
                   </Label>
                     </children></AnchorPane>

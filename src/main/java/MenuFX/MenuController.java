@@ -33,12 +33,4 @@ public class MenuController implements Initializable {
         back.setOnAction(e -> x.switchScene(e,"main","Main menu"));
         display.setOnAction(e -> x.switchScene(e, "display", "Display Words"));
     }
-
-    // just to pass the name of current user to other controllers
-    public void currentUser(String input){
-        user.setText(input);
-    }
-
-
-
 }
