@@ -45,7 +45,7 @@
                <content>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="307.0" prefWidth="265.0">
                      <children>
-                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Other Definitions will be displayed here">
+                        <Label fx:id="otherDefinitions" alignment="TOP_CENTER" layoutX="6.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="284.0" prefWidth="250.0" text="Other Definitions will be displayed here" wrapText="true">
                            <font>
                               <Font name="Roboto Thin" size="11.0" />
                            </font>
