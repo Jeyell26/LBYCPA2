@@ -9,8 +9,7 @@ import com.google.firebase.cloud.FirestoreClient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -25,7 +24,16 @@ public class SignUpController implements Initializable {
 
     // Username and Password textFields
     @FXML
-    TextField user, pass;
+    TextField user, showPass;
+
+    @FXML
+    PasswordField pass;
+
+    @FXML
+    Label error;
+
+    @FXML
+    CheckBox showToggle;
 
     @FXML
     Button signUp, back;
@@ -33,11 +41,21 @@ public class SignUpController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        showPass.setVisible(false);
+        pass.setVisible(true);
+        showToggle.setOnAction(e -> togglePass(e));
+
+
         //TODO: Initialize buttons here
         signUp.setOnAction(e -> {
             try {
-                if (verifyUser(user.getText())) {
-                    setSignUp(e, user.getText(), pass.getText());
+                if(getPass().isBlank() || user.getText().isBlank()){
+                    error.setText("Username or Password fields cannot be empty");
+                    error.setStyle("-fx-text-fill: red");
+                }
+                else if (verifyUser(user.getText())) {
+                    setSignUp(e, user.getText(), getPass());
                 }
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
@@ -45,6 +63,27 @@ public class SignUpController implements Initializable {
         });
 
         back.setOnAction(e -> setBack(e));
+    }
+
+    public void togglePass(ActionEvent event){
+        if(showToggle.isSelected()){
+            // show the text
+            showPass.setText(pass.getText());
+            showPass.setVisible(true);
+            pass.setVisible(false);
+            return;
+        }
+        pass.setText(showPass.getText());
+        showPass.setVisible(false);
+        pass.setVisible(true);
+
+    }
+
+    private String getPass(){
+        if(showToggle.isSelected()){
+            return showPass.getText();
+        }
+        return pass.getText();
     }
 
     private void setBack(ActionEvent e){
@@ -72,7 +111,8 @@ public class SignUpController implements Initializable {
         DocumentSnapshot document = future.get();
         if (document.exists()) {
             //TODO: Put error message saying "User already exists in the database
-
+            error.setText("User already exists in the database");
+            error.setStyle("-fx-text-fill: red");
             return false;
         }
         else return true;
