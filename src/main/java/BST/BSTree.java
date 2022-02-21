@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public class BSTree {
     public Node root;
-    public int height;
     public String owner;
 
     public BSTree(String input){
@@ -27,13 +26,6 @@ public class BSTree {
             left = null;
             right = null;
         }
-
-        public Node getSibling(){
-            Node temp = this.parent;
-            if (this == temp.right){
-                return temp.left;
-            } else return temp.right;
-        }
     }
 
     public Boolean isEmpty(){
@@ -44,7 +36,6 @@ public class BSTree {
         Node temp;
         temp = new Node(item, def);
         if (root == null) {
-            height = 1;
             root = temp;
         }
         else{
@@ -105,7 +96,6 @@ public class BSTree {
 
     public Node search(String item){
         if (root == null){
-            System.out.println("Tree is empty");
             return root;
         }
         Node curr = root;
