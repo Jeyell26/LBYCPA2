@@ -48,7 +48,6 @@ public class addController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         error.setText("");
         error.setWrapText(true);
         add.setOnAction(e -> {
@@ -64,7 +63,6 @@ public class addController implements Initializable {
                     return;
                 }
                 if (!verifyWord(e, word.getText())){
-                    //TODO: GUI that shows "word already exists" and tip to go to edit instead
                     error.setText("Word already exists, go to edit instead");
                     error.setStyle("-fx-text-fill: red");
                     return;
@@ -107,7 +105,6 @@ public class addController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
 

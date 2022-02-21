@@ -42,7 +42,6 @@ public class searchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         search.setOnAction(e ->{
             try {
                 if(word.getText().isEmpty()){
@@ -63,7 +62,6 @@ public class searchController implements Initializable {
     }
 
     private void setSearch(ActionEvent event, String word) throws ExecutionException, InterruptedException {
-        //TODO: Check database if word exists. If yes, display. If no, display empty
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         BSTree mainUserTree = getData((String) stage.getUserData());
         otherDefinitions.setText("");
@@ -123,7 +121,6 @@ public class searchController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
 }

@@ -30,8 +30,6 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Platform.runLater(this::setWelcome);
-
-        //TODO: Initialize buttons
         add.setOnAction(e -> x.switchScene(e,"add","Add a word"));
         delete.setOnAction(e -> x.switchScene(e,"delete","Delete an existing word"));
         edit.setOnAction(e -> x.switchScene(e,"edit","Edit an existing word"));

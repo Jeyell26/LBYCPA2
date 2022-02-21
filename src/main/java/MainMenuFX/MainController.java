@@ -24,14 +24,12 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         login.setOnAction(e -> x.switchScene(e,"login","Login"));
         signup.setOnAction(e -> x.switchScene(e,"signup","Sign Up"));
         exit.setOnAction(this::setExit);
     }
 
     private void setExit(ActionEvent e){
-        //TODO: Exit the code if clicked
         ((Stage) ((Node)e.getSource()).getScene().getWindow()).close();
     }
 

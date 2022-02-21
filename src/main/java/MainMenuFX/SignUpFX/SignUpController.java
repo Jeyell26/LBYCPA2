@@ -45,8 +45,6 @@ public class SignUpController implements Initializable {
         pass.setVisible(true);
         showToggle.setOnAction(this::togglePass);
 
-
-        //TODO: Initialize buttons here
         signUp.setOnAction(e -> {
             try {
                 if(getPass().isBlank() || user.getText().isBlank()){
@@ -85,7 +83,6 @@ public class SignUpController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"main","Main Menu");
     }
 
@@ -106,7 +103,6 @@ public class SignUpController implements Initializable {
         ApiFuture<DocumentSnapshot> future = docRef.get();
         DocumentSnapshot document = future.get();
         if (document.exists()) {
-            //TODO: Put error message saying "User already exists in the database
             error.setText("User already exists in the database");
             error.setStyle("-fx-text-fill: red");
             return false;

@@ -35,7 +35,6 @@ public class displayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         back.setOnAction(this::setBack);
         moveToSearch.setOnAction(this::setSearch);
         changeDatabase.setOnAction(e -> {
@@ -59,8 +58,6 @@ public class displayController implements Initializable {
         ApiFuture<QuerySnapshot> future = db.collection("User Database").get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         ArrayList<BSTree> otherDef = new ArrayList<>();
-
-        //TODO: Display the word based on database selection
 
         // IF BOTH
         if(userWords.isSelected() && databaseWords.isSelected()){
@@ -157,12 +154,10 @@ public class displayController implements Initializable {
     }
 
     private void setSearch(ActionEvent e){
-        //TODO: Go to search
         x.switchScene(e,"search","Search for a definition");
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
 }

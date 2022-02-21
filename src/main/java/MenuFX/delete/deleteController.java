@@ -39,7 +39,6 @@ public class deleteController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         error.setText("");
         error.setWrapText(true);
         delete.setOnAction(e -> {
@@ -91,7 +90,6 @@ public class deleteController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
 

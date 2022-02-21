@@ -60,7 +60,6 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         error.setWrapText(true);
         showPass.setVisible(false);
-        //TODO: Initialize buttons here
         showToggle.setOnAction(this::togglePass);
         login.setOnAction(e -> {
             boolean temp = false;
@@ -104,12 +103,10 @@ public class LoginController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"main","Main Menu");
     }
 
     private void setLogin(ActionEvent e, String input) {
-        //TODO: If user and pass is valid, proceed to MenuFX. If not, Show error message.
         x.switchScene(e,"menu","Menu", input);
     }
 

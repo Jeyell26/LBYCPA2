@@ -47,7 +47,6 @@ public class editController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Initialize buttons here
         error.setText("");
         error.setWrapText(true);
         edit.setOnAction(e ->{
@@ -102,7 +101,6 @@ public class editController implements Initializable {
     }
 
     private void setBack(ActionEvent e){
-        //TODO: Go back to MainMenuFX
         x.switchScene(e,"menu","Menu");
     }
 
