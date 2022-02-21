@@ -12,7 +12,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    // Make sure you use the proper FXML IDs!
 
     // Shows buttons to login or signup, and exit.
 

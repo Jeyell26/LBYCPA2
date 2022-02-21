@@ -20,7 +20,6 @@ import java.util.concurrent.ExecutionException;
 
 public class LoginController implements Initializable {
 
-    // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
 
     Stage stage;

@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
 public class SignUpController implements Initializable {
-    // Make sure you use the proper FXML IDs!
 
     Navigate x = new Navigate();
 
@@ -97,8 +96,6 @@ public class SignUpController implements Initializable {
         details.put("password", pass);
         db.collection("User Database").document(user).set(dictionary);
         db.collection("User Details").document(user).set(details);
-
-        // Goes back after signing up. Maybe after a prompt saying "Successfully signed up"
         setBack(e);
     }
 

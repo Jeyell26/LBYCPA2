@@ -29,7 +29,6 @@ public class addController implements Initializable {
     Stage stage;
 
     Navigate x = new Navigate();
-    // Make sure you use the proper FXML IDs!
 
     // TextField to input word and definition
     // Should add to existing Database

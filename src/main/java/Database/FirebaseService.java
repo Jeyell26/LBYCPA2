@@ -14,7 +14,6 @@ public class FirebaseService {
             FileInputStream serviceAccount =
                     new FileInputStream("lbycpa2-dictionary-database-firebase-adminsdk-jcyiu-5c618034b3.json");
 
-            // I have no idea why it is deprecated, but it still works so ignore :>
             FirebaseOptions options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .build();

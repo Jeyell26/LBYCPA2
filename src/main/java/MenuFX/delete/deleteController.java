@@ -23,7 +23,6 @@ import java.util.concurrent.ExecutionException;
 public class deleteController implements Initializable {
     Stage stage;
 
-    // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
     // TextField to input word and definition
     // Should add to existing Database
@@ -37,8 +36,6 @@ public class deleteController implements Initializable {
     @FXML
     Button delete, back;
     // Buttons to complete process
-
-    // BST bst = new BST();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,17 +61,8 @@ public class deleteController implements Initializable {
                 ex.printStackTrace();
             }
         });
-
         back.setOnAction(this::setBack);
-        // LOAD BST
-
     }
-
-//    private void loadBST()
-//      // loads BST of the current profile for deletion
-
-//    private void saveBST()
-//      // Overwrite current profile BST
 
 
     private void setDelete(ActionEvent event, String word){

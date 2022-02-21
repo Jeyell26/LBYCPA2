@@ -17,8 +17,8 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class displayController implements Initializable {
-    // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
+
     // TextField to input word to search
     // Should show all words from this database
 

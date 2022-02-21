@@ -22,21 +22,10 @@ import java.util.concurrent.ExecutionException;
 public class searchController implements Initializable {
     Stage stage;
 
-    // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
     // TextField to input word to search
     @FXML
     TextField word;
-    // Should show all results from each database
-    // Use a scroll wheel to be able to view all inputs
-    // IF possible, add a Like button and sort it by likes (descending)
-
-    // Show the current user's definition if they have the word on their database
-    // If not show "This word has not been defined by the user yet"
-
-    // If the word is not mentioned in the database INPUT word has not been added by anyone yet.
-
-    // This is by far the hardest one to implement.
 
     @FXML
     Text wordChosen;

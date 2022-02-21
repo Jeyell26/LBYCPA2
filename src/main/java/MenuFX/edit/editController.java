@@ -27,7 +27,6 @@ import java.util.concurrent.ExecutionException;
 public class editController implements Initializable {
     Stage stage;
 
-    // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
     // TextField to input word and definition
     // Should add to existing Database
@@ -77,12 +76,6 @@ public class editController implements Initializable {
         });
         back.setOnAction(this::setBack);
     }
-
-    //    private void loadBST()
-//      // loads BST of the current profile for deletion
-
-//    private void saveBST()
-//      // Overwrite current profile BST
 
     private void setEdit(ActionEvent event, String word, String def){
         Firestore db = FirestoreClient.getFirestore();
