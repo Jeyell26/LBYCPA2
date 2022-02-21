@@ -85,6 +85,9 @@ public class displayController implements Initializable {
                 }
             }
             Collections.sort(output);
+            error.setText("Currently showing all the words..");
+            error.setStyle("-fx-text-fill: black");
+            error.setVisible(true);
         }
 
         // IF ONLY USER
@@ -99,6 +102,9 @@ public class displayController implements Initializable {
             for(String t: temp){
                 output.add(t.substring(0,1).toUpperCase() + t.substring(1));
             }
+            error.setText("Currently showing " + stage.getUserData() + "'s words..");
+            error.setStyle("-fx-text-fill: black");
+            error.setVisible(true);
         }
 
         // IF ONLY DATABASE
@@ -116,6 +122,9 @@ public class displayController implements Initializable {
                }
             }
             Collections.sort(output);
+            error.setText("Currently showing the database' words..");
+            error.setStyle("-fx-text-fill: black");
+            error.setVisible(true);
         }
 
         StringBuilder stringTemp = new StringBuilder();
@@ -123,7 +132,6 @@ public class displayController implements Initializable {
             stringTemp.append(t).append("\n");
         }
         otherDefinitions.setText(stringTemp.toString());
-        error.setVisible(false);
     }
 
     private static BSTree getData(String input) throws ExecutionException, InterruptedException {
@@ -151,7 +159,7 @@ public class displayController implements Initializable {
 
     private void setSearch(ActionEvent e){
         //TODO: Go to search
-        x.switchScene(e,"search","Search");
+        x.switchScene(e,"search","Search for a definition");
     }
 
     private void setBack(ActionEvent e){

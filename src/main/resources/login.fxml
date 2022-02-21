@@ -26,11 +26,11 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f9" height="344.0" layoutX="144.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="312.0" />
             <TextField fx:id="user" layoutX="182.0" layoutY="137.0" prefHeight="42.0" prefWidth="234.0" promptText="Username" />
             <PasswordField fx:id="pass" layoutX="182.0" layoutY="194.0" prefHeight="42.0" prefWidth="234.0" promptText="Password" />
-            <Button fx:id="back" layoutX="183.0" layoutY="294.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #3eb489;" text="MAIN MENU" textFill="WHITE">
+            <Button fx:id="login" layoutX="183.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" style="-fx-background-color: #3eb489;" text="LOGIN" textFill="WHITE">
                <font>
                   <Font name="Rockwell" size="14.0" />
                </font></Button>
-            <Button fx:id="login" layoutX="183.0" layoutY="254.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="233.0" style="-fx-background-color: #3eb489;" text="LOGIN" textFill="WHITE">
+            <Button fx:id="back" layoutX="183.0" layoutY="294.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #3eb489;" text="MAIN MENU" textFill="WHITE">
                <font>
                   <Font name="Rockwell" size="14.0" />
                </font></Button>

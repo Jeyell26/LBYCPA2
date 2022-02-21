@@ -1,7 +1,9 @@
 package MainMenuFX.LoginFX;
 
+import MenuFX.MenuController;
 import Tools.Navigate;
 import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
@@ -9,10 +11,17 @@ import com.google.firebase.cloud.FirestoreClient;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
@@ -20,6 +29,8 @@ public class LoginController implements Initializable {
 
     // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
+
+    Stage stage;
 
     // Username and Password textFields
     @FXML
@@ -39,6 +50,21 @@ public class LoginController implements Initializable {
     double progress;
     // Buttons to navigate
 
+    // Database
+    Firestore db = FirestoreClient.getFirestore();
+    CollectionReference cr = db.collection("User Details");
+    DocumentReference docRef = cr.document("_");
+    ApiFuture<DocumentSnapshot> future = docRef.get();
+    DocumentSnapshot document;
+
+    {
+        try {
+            document = future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loading.setVisible(false);
@@ -48,15 +74,15 @@ public class LoginController implements Initializable {
         login.setOnAction(e -> {
             loading.setVisible(true);
             boolean temp = false;
+            stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             try {
                 temp = loginUser(user.getText(),pass.getText());
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
-
             if (temp){
                 loadProgress(.20);
-                setLogin(e,user.getText());
+                Platform.runLater(() -> setLogin(e,user.getText()));
             }
             else{
                 loadProgress(0);
@@ -72,6 +98,8 @@ public class LoginController implements Initializable {
 
     }
 
+
+
     private void loadProgress(double inp){
         progress += inp;
         if (!(progress < 1)) {
@@ -81,6 +109,8 @@ public class LoginController implements Initializable {
             progress = 0;
         }
         loading.setProgress(progress);
+
+
     }
 
     private void setBack(ActionEvent e){
@@ -100,17 +130,14 @@ public class LoginController implements Initializable {
             error.setStyle("-fx-text-fill: red");
             return false;
         }
-        Firestore db = FirestoreClient.getFirestore();
-        loadProgress(0.20);
-        DocumentReference docRef = db.collection("User Details").document(user);
-        ApiFuture<DocumentSnapshot> future = docRef.get();
-        loadProgress(0.20);
-        DocumentSnapshot document = future.get();
-        loadProgress(0.30);
+
+
+        docRef = cr.document(user);
+        future = docRef.get();
+        document = future.get();
+
         if (document.exists()) {
             if(pass.equals(document.getString("password"))) {
-                error.setText("Logging in..");
-                error.setStyle("-fx-text-fill: green");
                 return true;
             }
             else {
@@ -125,6 +152,7 @@ public class LoginController implements Initializable {
             error.setStyle("-fx-text-fill: red");
             return false;
         }
+
     }
 
 }
