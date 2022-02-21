@@ -1,5 +1,6 @@
 package BST;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class BSTree {
@@ -122,14 +123,13 @@ public class BSTree {
         return curr;
     }
 
-    String inorder(Node n){
-        String str = "";
+    public ArrayList<String> inorder(Node n, ArrayList<String> temp){
         if (n!=null){
-            str += inorder(n.left);
-            str += n.title + " ";
-            str += inorder(n.right);
+            inorder(n.left,temp);
+            temp.add(n.title);
+            inorder(n.right,temp);
         }
-        return str;
+        return temp;
     }
 
 

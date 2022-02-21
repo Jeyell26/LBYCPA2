@@ -62,6 +62,9 @@ public class searchController implements Initializable {
                     return;
                 }
                 setSearch(e, word.getText());
+                if(otherDefinitions.getText().isBlank()){
+                    otherDefinitions.setText("Other users have not added this word yet.");
+                }
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
@@ -71,7 +74,7 @@ public class searchController implements Initializable {
     }
 
     private void setSearch(ActionEvent event, String word) throws ExecutionException, InterruptedException {
-        //TODO: Check database if word exists. If yes, edit. If no, display error message in userDefinition Label
+        //TODO: Check database if word exists. If yes, display. If no, display empty
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         BSTree mainUserTree = getData((String) stage.getUserData());
         otherDefinitions.setText("");
@@ -84,11 +87,14 @@ public class searchController implements Initializable {
         for (QueryDocumentSnapshot document : documents) {
             if (!document.getId().equals((String) stage.getUserData())) otherDef.add(getData(document.getId()));
         }
+
+        // for main user
         if(mainUserTree.search(word) != null){
             BSTree.Node node = mainUserTree.search(word);
             userDefinition.setText("WORD: " + node.title + "\n" + "DEFINITION: " + node.definition);
         }else userDefinition.setText("Word does not exist for Current User");
 
+        // for others
         for(int i = 0; i < documents.size() - 1; i++) {
             if (otherDef.get(i).search(word) != null) {
                 BSTree.Node node = otherDef.get(i).search(word);
