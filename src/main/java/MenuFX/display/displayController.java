@@ -150,11 +150,10 @@ public class displayController implements Initializable {
         return tree;
     }
 
-    private static BSTree MapToTree(BSTree tree, Map<String, Object> map){
+    private static void MapToTree(BSTree tree, Map<String, Object> map){
         for(String key: map.keySet()){
             tree.insert(key, (String) map.get(key));
         }
-        return tree;
     }
 
     private void setSearch(ActionEvent e){

@@ -44,7 +44,7 @@ public class SignUpController implements Initializable {
 
         showPass.setVisible(false);
         pass.setVisible(true);
-        showToggle.setOnAction(e -> togglePass(e));
+        showToggle.setOnAction(this::togglePass);
 
 
         //TODO: Initialize buttons here
@@ -62,7 +62,7 @@ public class SignUpController implements Initializable {
             }
         });
 
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
     }
 
     public void togglePass(ActionEvent event){

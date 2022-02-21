@@ -1,6 +1,5 @@
 package MainMenuFX.LoginFX;
 
-import MenuFX.MenuController;
 import Tools.Navigate;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
@@ -8,20 +7,14 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.firebase.cloud.FirestoreClient;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 
@@ -82,7 +75,7 @@ public class LoginController implements Initializable {
             }
             if (temp){
                 loadProgress(.20);
-                Platform.runLater(() -> setLogin(e,user.getText()));
+                setLogin(e,user.getText());
             }
             else{
                 loadProgress(0);
@@ -92,7 +85,7 @@ public class LoginController implements Initializable {
             this.pass.clear();
         });
 
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
 
         //TODO: Load from database here (to check if login is valid)
 
@@ -120,7 +113,7 @@ public class LoginController implements Initializable {
 
     private void setLogin(ActionEvent e, String input) {
         //TODO: If user and pass is valid, proceed to MenuFX. If not, Show error message.
-        x.switchScene(e,"menu","Menu",input);
+        x.switchScene(e,"menu","Menu", input);
     }
 
     // whether inputted user details matches

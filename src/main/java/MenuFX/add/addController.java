@@ -79,7 +79,7 @@ public class addController implements Initializable {
             }
         });
 
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
 
     }
 

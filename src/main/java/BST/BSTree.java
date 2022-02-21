@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public class BSTree {
     public Node root;
-    public boolean flag;
     public int height;
     public String owner;
 

@@ -11,12 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
@@ -47,7 +45,9 @@ public class searchController implements Initializable {
     Label error, userDefinition, otherDefinitions;
 
     @FXML
-    Button search, back, like;
+    Button search;
+    @FXML
+    Button back;
     // Buttons to complete process
 
 
@@ -70,7 +70,7 @@ public class searchController implements Initializable {
             }
         });
 
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
     }
 
     private void setSearch(ActionEvent event, String word) throws ExecutionException, InterruptedException {
@@ -79,13 +79,13 @@ public class searchController implements Initializable {
         BSTree mainUserTree = getData((String) stage.getUserData());
         otherDefinitions.setText("");
 
-        //      Set otherDefinitions to show in the scrollpane
+        //      Set otherDefinitions to show in the scroll pane
         Firestore db = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = db.collection("User Database").get();
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
         ArrayList<BSTree> otherDef = new ArrayList<>();
         for (QueryDocumentSnapshot document : documents) {
-            if (!document.getId().equals((String) stage.getUserData())) otherDef.add(getData(document.getId()));
+            if (!document.getId().equals(stage.getUserData())) otherDef.add(getData(document.getId()));
         }
 
         // for main user
@@ -110,11 +110,10 @@ public class searchController implements Initializable {
     }
 
     //converts database data fields to tree
-    private static BSTree MapToTree(BSTree tree, Map<String, Object> map){
+    private static void MapToTree(BSTree tree, Map<String, Object> map){
         for(String key: map.keySet()){
             tree.insert(key, (String) map.get(key));
         }
-        return tree;
     }
 
     //gets the data from the database also converts it to tree
@@ -127,7 +126,7 @@ public class searchController implements Initializable {
         DocumentSnapshot document = future.get();
 
         if (document.exists()) {
-            MapToTree(tree, document.getData());
+            MapToTree(tree, Objects.requireNonNull(document.getData()));
         } else {
             System.out.println("No such document!");
         }

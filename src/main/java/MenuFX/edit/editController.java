@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -76,7 +75,7 @@ public class editController implements Initializable {
                 ex.printStackTrace();
             }
         });
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
     }
 
     //    private void loadBST()

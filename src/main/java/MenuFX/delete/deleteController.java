@@ -65,7 +65,7 @@ public class deleteController implements Initializable {
             }
         });
 
-        back.setOnAction(e -> setBack(e));
+        back.setOnAction(this::setBack);
         // LOAD BST
 
     }
