@@ -20,10 +20,7 @@ public class displayController implements Initializable {
     // Make sure you use the proper FXML IDs!
     Navigate x = new Navigate();
     // TextField to input word to search
-    // Should show all words from this databse
-
-    @FXML
-    ToggleGroup databaseWordsTG;
+    // Should show all words from this database
 
     @FXML
     RadioButton userWords, databaseWords;
@@ -35,14 +32,12 @@ public class displayController implements Initializable {
     Button moveToSearch, back, changeDatabase;
     // Buttons to complete process
 
-    private Stage stage;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO: Initialize buttons here
-        back.setOnAction(e -> setBack(e));
-        moveToSearch.setOnAction(e -> setSearch(e));
+        back.setOnAction(this::setBack);
+        moveToSearch.setOnAction(this::setSearch);
         changeDatabase.setOnAction(e -> {
             try {
                 setDisplay(e);
@@ -57,7 +52,7 @@ public class displayController implements Initializable {
         ArrayList<String> output = new ArrayList<>();
         ArrayList<String> temp = new ArrayList<>();
         // Current user variables
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         BSTree mainUserTree = getData((String) stage.getUserData());
         // Other user variables
         Firestore db = FirestoreClient.getFirestore();
@@ -123,11 +118,11 @@ public class displayController implements Initializable {
             Collections.sort(output);
         }
 
-        String stringTemp = "";
+        StringBuilder stringTemp = new StringBuilder();
         for(String t: output){
-            stringTemp += t + "\n";
+            stringTemp.append(t).append("\n");
         }
-        otherDefinitions.setText(stringTemp);
+        otherDefinitions.setText(stringTemp.toString());
         error.setVisible(false);
     }
 
@@ -140,7 +135,7 @@ public class displayController implements Initializable {
         DocumentSnapshot document = future.get();
 
         if (document.exists()) {
-            MapToTree(tree, document.getData());
+            MapToTree(tree, Objects.requireNonNull(document.getData()));
         } else {
             System.out.println("No such document!");
         }
