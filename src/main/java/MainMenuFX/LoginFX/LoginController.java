@@ -27,7 +27,10 @@ public class LoginController implements Initializable {
 
     // Username and Password textFields
     @FXML
-    TextField user;
+    TextField user, showPass;
+
+    @FXML
+    CheckBox showToggle;
 
     @FXML
     PasswordField pass;
@@ -38,11 +41,6 @@ public class LoginController implements Initializable {
     @FXML
     Button login, back;
 
-    @FXML
-    ProgressBar loading;
-    double progress;
-    // Buttons to navigate
-
     // Database
     Firestore db = FirestoreClient.getFirestore();
     CollectionReference cr = db.collection("User Details");
@@ -50,6 +48,7 @@ public class LoginController implements Initializable {
     ApiFuture<DocumentSnapshot> future = docRef.get();
     DocumentSnapshot document;
 
+    // Run for loading
     {
         try {
             document = future.get();
@@ -60,50 +59,49 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loading.setVisible(false);
-        progress = 0;
         error.setWrapText(true);
+        showPass.setVisible(false);
         //TODO: Initialize buttons here
+        showToggle.setOnAction(this::togglePass);
         login.setOnAction(e -> {
-            loading.setVisible(true);
             boolean temp = false;
             stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             try {
-                temp = loginUser(user.getText(),pass.getText());
+                temp = loginUser(user.getText(),getPass());
             } catch (ExecutionException | InterruptedException ex) {
                 ex.printStackTrace();
             }
             if (temp){
-                loadProgress(.20);
                 setLogin(e,user.getText());
-            }
-            else{
-                loadProgress(0);
-                loading.setVisible(false);
             }
             this.user.clear();
             this.pass.clear();
+            this.showPass.clear();
         });
 
         back.setOnAction(this::setBack);
 
-        //TODO: Load from database here (to check if login is valid)
 
     }
 
-
-
-    private void loadProgress(double inp){
-        progress += inp;
-        if (!(progress < 1)) {
-            progress = 1;
+    private void togglePass(ActionEvent event){
+        if(showToggle.isSelected()){
+            // show the text
+            showPass.setText(pass.getText());
+            showPass.setVisible(true);
+            pass.setVisible(false);
+            return;
         }
-        if(inp == 0){
-            progress = 0;
+        pass.setText(showPass.getText());
+        showPass.setVisible(false);
+        pass.setVisible(true);
+    }
+
+    private String getPass(){
+        if(showToggle.isSelected()){
+            return showPass.getText();
         }
-        loading.setProgress(progress);
-
-
+        return pass.getText();
     }
 
     private void setBack(ActionEvent e){

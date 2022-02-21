@@ -76,7 +76,6 @@ public class SignUpController implements Initializable {
         pass.setText(showPass.getText());
         showPass.setVisible(false);
         pass.setVisible(true);
-
     }
 
     private String getPass(){
