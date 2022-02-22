@@ -83,7 +83,7 @@ public class addController implements Initializable {
     private void setAdd(ActionEvent event, String word, String def) throws ExecutionException, InterruptedException {
         Firestore db = FirestoreClient.getFirestore();
         Map<String, String> dictionary = new HashMap<>();
-        dictionary.put(word,def);
+        dictionary.put(word.substring(0,1).toUpperCase()+word.substring(1).toLowerCase(),def);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         db.collection("User Database").document((String) stage.getUserData()).set(dictionary, SetOptions.merge());
     }

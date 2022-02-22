@@ -14,10 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class deleteController implements Initializable {
@@ -65,6 +62,9 @@ public class deleteController implements Initializable {
 
 
     private void setDelete(ActionEvent event, String word){
+        String temp;
+        temp = word.substring(0,1).toUpperCase() + word.substring(1).toLowerCase();
+        word = temp;
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Firestore db = FirestoreClient.getFirestore();
         DocumentReference dr = db.collection("User Database").document((String) stage.getUserData());
@@ -74,6 +74,9 @@ public class deleteController implements Initializable {
     }
 
     private Boolean verifyWord(ActionEvent event, String word) throws ExecutionException, InterruptedException{
+        String temp;
+        temp = word.substring(0,1).toUpperCase() + word.substring(1).toLowerCase();
+        word = temp;
         Firestore db = FirestoreClient.getFirestore();
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         DocumentReference docRef = db.collection("User Database").document((String) stage.getUserData());
