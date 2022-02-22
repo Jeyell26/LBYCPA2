@@ -1,0 +1,253 @@
+@startuml
+
+title __Dictionary w/ Integrated BST UML Diagram__\n
+  
+  namespace BST {
+    class BST.BSTree {
+        + height : int
+        + owner : String
+        + BSTree()
+        + delete()
+        + inorder()
+        + insert()
+        + isEmpty()
+        + search()
+        ~ deletion()
+        ~ minimum()
+    }
+  }
+
+
+  namespace BST {
+    class BST.BSTree.Node {
+        + definition : String
+        + title : String
+        + getSibling()
+        ~ Node()
+    }
+  }
+
+   namespace Database {
+      class Database.FirebaseService {
+          + initialize()
+      }
+    }
+  
+
+   namespace MainMenuFX {
+      class MainMenuFX.Main {
+          {static} + main()
+          + start()
+      }
+    }
+
+   namespace MainMenuFX {
+      namespace LoginFX {
+          class MainMenuFX.LoginFX.LoginController {
+              ~ back : Button
+              ~ cr : CollectionReference
+              ~ db : Firestore
+              ~ docRef : DocumentReference
+              ~ document : DocumentSnapshot
+              ~ error : Label
+              ~ future : ApiFuture<DocumentSnapshot>
+              ~ login : Button
+              ~ pass : PasswordField
+              ~ showPass : TextField
+              ~ showToggle : CheckBox
+              ~ stage : Stage
+              ~ user : TextField
+              + initialize()
+              - getPass()
+              - loginUser()
+              - setBack()
+              - setLogin()
+              - togglePass()
+          }
+      }
+   }
+
+    namespace MainMenuFX {
+        namespace SignUpFX {
+          class MainMenuFX.SignUpFX.SignUpController {
+              ~ back : Button
+              ~ error : Label
+              ~ pass : PasswordField
+              ~ showPass : TextField
+              ~ showToggle : CheckBox
+              ~ signUp : Button
+              ~ user : TextField
+              + initialize()
+              + togglePass()
+              - getPass()
+              - setBack()
+              - setSignUp()
+              - verifyUser()
+          }
+        }
+    }
+
+      namespace MainMenuFX {
+          class MainMenuFX.MainController {
+              ~ exit : Button
+              ~ login : Button
+              ~ signup : Button
+              + initialize()
+              - setExit()
+          }
+        }
+
+   namespace MenuFX {
+      class MenuFX.MenuController {
+          ~ add : Button
+          ~ back : Button
+          ~ delete : Button
+          ~ display : Button
+          ~ edit : Button
+          ~ search : Button
+          ~ stage : Stage
+          ~ welcome : Text
+          + initialize()
+          + setWelcome()
+      }
+    }
+
+  namespace MenuFX {
+      namespace add {
+        class MenuFX.add.addController {
+            ~ add : Button
+            ~ back : Button
+            ~ definition : TextArea
+            ~ error : Label
+            ~ stage : Stage
+            ~ word : TextField
+            + initialize()
+            - setAdd()
+            - setBack()
+            - verifyWord()
+        }
+      }
+    }
+
+   namespace MenuFX {
+      namespace delete {
+        class MenuFX.delete.deleteController {
+            ~ back : Button
+            ~ delete : Button
+            ~ error : Label
+            ~ stage : Stage
+            ~ word : TextField
+            + initialize()
+            - setBack()
+            - setDelete()
+            - verifyWord()
+        }
+      }
+    }
+
+  namespace MenuFX {
+    namespace display {
+      class MenuFX.display.displayController {
+          ~ back : Button
+          ~ changeDatabase : Button
+          ~ databaseWords : RadioButton
+          ~ error : Label
+          ~ moveToSearch : Button
+          ~ otherDefinitions : Label
+          ~ userWords : RadioButton
+          + initialize()
+          {static} - MapToTree()
+          {static} - getData()
+          - setBack()
+          - setDisplay()
+          - setSearch()
+      }
+    }
+  }
+
+  namespace MenuFX {
+      namespace edit {
+        class MenuFX.edit.editController {
+            ~ back : Button
+            ~ definition : TextArea
+            ~ edit : Button
+            ~ error : Label
+            ~ stage : Stage
+            ~ word : TextField
+            + initialize()
+            - setBack()
+            - setEdit()
+            - verifyWord()
+        }
+      }
+    }
+
+
+  namespace MenuFX {
+      namespace search {
+        class MenuFX.search.searchController {
+            ~ back : Button
+            ~ error : Label
+            ~ otherDefinitions : Label
+            ~ search : Button
+            ~ stage : Stage
+            ~ userDefinition : Label
+            ~ word : TextField
+            ~ wordChosen : Text
+            + initialize()
+            {static} - MapToTree()
+            {static} - getData()
+            - setBack()
+            - setSearch()
+        }
+      }
+    }
+
+
+  namespace Tools {
+    class Tools.Navigate {
+        + switchScene()
+        + switchScene()
+    }
+  }
+  
+
+  BST.BSTree o-- BST.BSTree.Node : root
+  MainMenuFX.LoginFX.LoginController .up.|> javafx.fxml.Initializable
+  MainMenuFX.LoginFX.LoginController o-- Tools.Navigate : x
+  MainMenuFX.Main -up-|> javafx.application.Application
+  MainMenuFX.Main o-- Database.FirebaseService : firebase
+  MainMenuFX.MainController .up.|> javafx.fxml.Initializable
+  MainMenuFX.MainController o-- Tools.Navigate : x
+  MainMenuFX.SignUpFX.SignUpController .up.|> javafx.fxml.Initializable
+  MainMenuFX.SignUpFX.SignUpController o-- Tools.Navigate : x
+  MenuFX.MenuController .up.|> javafx.fxml.Initializable
+  MenuFX.MenuController o-- Tools.Navigate : x
+  MenuFX.MenuController .up.|> javafx.fxml.Initializable
+  MenuFX.MenuController o-- Tools.Navigate : x
+  MenuFX.add.addController .up.|> javafx.fxml.Initializable
+  MenuFX.add.addController o-- Tools.Navigate : x
+  MenuFX.add.addController .up.|> javafx.fxml.Initializable
+  MenuFX.add.addController o-- Tools.Navigate : x
+  MenuFX.delete.deleteController .up.|> javafx.fxml.Initializable
+  MenuFX.delete.deleteController o-- Tools.Navigate : x
+  MenuFX.display.displayController .up.|> javafx.fxml.Initializable
+  MenuFX.display.displayController o-- Tools.Navigate : x
+  MenuFX.edit.editController .up.|> javafx.fxml.Initializable
+  MenuFX.edit.editController o-- Tools.Navigate : x
+  MenuFX.search.searchController .up.|> javafx.fxml.Initializable
+  MenuFX.search.searchController o-- Tools.Navigate : x
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+left footer
+Group 4's Dictionary with Integrated BST UML Diagram
+By: JL Bungay, Marc Diesta, JD Ocampo
+end footer
+@enduml
